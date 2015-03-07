@@ -7,3 +7,11 @@
     -o-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
 }
+
+.authorization .icon-github-circled {
+    color: white;
+}
+
+.authorization .button {
+    margin-top: 24px;
+}
