@@ -1,0 +1,19 @@
+{
+  "name": "config-builder",
+  "version": "1.0.0",
+  "description": "example of mixing Angular and React with MVC-elements approach",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MVC-Elements/config-builder.git"
+  },
+  "author": "MVC-Elements",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MVC-Elements/config-builder/issues"
+  },
+  "homepage": "https://github.com/MVC-Elements/config-builder"
+}
