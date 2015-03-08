@@ -2,6 +2,9 @@
   "name": "config-builder",
   "version": "1.0.0",
   "description": "example of mixing Angular and React with MVC-elements approach",
+  "engines": {
+    "node": "0.10.x"
+  },
   "main": "server.js",
   "dependencies": {
     "async": "~0.2.10",
