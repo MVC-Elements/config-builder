@@ -32,6 +32,7 @@
     "request": "~2.34.0"
   },
   "scripts": {
+    "start": "./node_modules/.bin/grunt start",
     "postinstall": "node_modules/.bin/bower install && node_modules/.bin/grunt install",
     "build": "node_modules/.bin/bower install && node_modules/.bin/grunt build"
   },
