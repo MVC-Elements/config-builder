@@ -1,0 +1,34 @@
+{
+  "curly": true,
+  "eqnull": true,
+  "eqeqeq": true,
+  "undef": true,
+  "quotmark": "single",
+  "globals": {
+    "window": true,
+    "process": false
+  },
+  "predef": [
+    "_",
+    "angular",
+    "require",
+    "inject",
+    "module",
+    "chai",
+    "expect",
+    "sinon",
+    "describe",
+    "xdescribe",
+    "it",
+    "xit",
+    "beforeEach",
+    "afterEach",
+    "by",
+    "protractor",
+    "element",
+    "select",
+    "input",
+    "sleep",
+    "browser"
+  ]
+}

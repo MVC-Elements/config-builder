@@ -1,6 +1,15 @@
 angular.module('config-builder')
-  .service('Github', function(Restangular){
-    this.getToken = function(code) {
-      ///api/github/gettoken/:code
+  .service('Github', function($http) {
+
+    var token = null;
+
+    this.getTokenPromise = function(code) {
+      return $http.get('/api/github/gettoken/' + code).then(function(result){
+        token = result.data.access_token;
+      });
+    };
+
+    this.getUserPromise = function() {
+      return $http.get('https://api.github.com/user?access_token=' + token);
     }
   });
