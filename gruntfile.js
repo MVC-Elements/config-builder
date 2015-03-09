@@ -28,9 +28,23 @@ module.exports = function(grunt) {
       prod: {
         files: [
           { src: 'src/index.src.html', dest: 'public/index.html' },
-          { src: 'bower_components/angular/angular.min.js', dest: 'public/libs/angular.min.js' },
-          { src: 'bower_components/foundation/css/foundation.css', dest: 'public/css/foundation.css' }
+          { src: 'bower_components/angular/angular.min.js', dest: 'public/javascript/angular.min.js' }
         ]
+      }
+    },
+    'sails-linker': {
+      dev: {
+        options: {
+          startTag: '<!--SCRIPTS-->',
+          endTag: '<!--SCRIPTS END-->',
+          fileTmpl: '<script src="%s"></script>',
+          appRoot: 'src/'
+        },
+        files: {
+          // Target-specific file lists and/or options go here.
+          'src/index.html': ['src/libs/*.js',
+                             'src/app/**/*.js']
+        }
       }
     },
     clean: {
@@ -60,7 +74,7 @@ module.exports = function(grunt) {
     ngAnnotate: {
       prod: {
         files: {
-          'public/app/app.js': [
+          'public/javascript/app.js': [
             sourcePath + 'app/**/*.js',
           ]
         }
@@ -81,6 +95,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['start']);
   grunt.registerTask('start', ['express:dev', 'watch', 'express-keepalive']);
   grunt.registerTask('test', ['jshint']);
-  grunt.registerTask('install', ['copy:index_dev', 'copy:dev', 'clean:bower', 'html2js']);
+  grunt.registerTask('install', ['copy:index_dev', 'copy:dev', 'clean:bower', 'html2js', 'sails-linker']);
   grunt.registerTask('build', ['clean:public', 'copy:prod', 'clean:bower', 'html2js', 'ngAnnotate:prod']);
 };

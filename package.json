@@ -23,10 +23,11 @@
     "grunt-db-migrate": "~0.2.0",
     "grunt-express": "~1.2.1",
     "grunt-html2js": "~0.2.4",
+    "grunt-ng-annotate": "~0.2.3",
     "grunt-notify": "~0.2.17",
     "grunt-open": "~0.2.3",
+    "grunt-sails-linker": "^0.10.1",
     "load-grunt-tasks": "^3.1.0",
-    "grunt-ng-annotate": "~0.2.3",
     "node-gyp": "~0.13.0",
     "pg": "~2.11.1",
     "request": "~2.34.0"
