@@ -9,7 +9,6 @@ angular.module('config-builder').controller('mainController', function($scope, G
         $scope.user = user.data;
       });
       Github.getUserRepos().then(function (repos) {
-       debugger
         $scope.repos = repos.data;
       });
     });

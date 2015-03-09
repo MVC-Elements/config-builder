@@ -6,7 +6,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.1/css/foundation.css" rel="stylesheet">
   <script src=""></script>
 </head>
-<body ng-controller="mainController">
+<body ng-controller="mainController" ng-cloak>
 <a class="button" href="https://github.com/login/oauth/authorize?client_id=e049784bc0cfcdf1854e">Github Authorize</a>
 
 <div ng-if="user">
@@ -15,7 +15,7 @@
   <div>
     <ul>
       <li ng-repeat="repo in repos">
-        <a href="{{ repo.url }}">{{ repo.name }}</a>
+        <a href="{{ repo.html_url }}">{{ repo.name }}</a>
       </li>
     </ul>
   </div>
