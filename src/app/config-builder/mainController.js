@@ -1,10 +1,16 @@
-angular.module('config-builder').controller('mainController', function(Github) {
-  debugger
+angular.module('config-builder').controller('mainController', function($scope, Github) {
+
+  $scope.user = null;
+  $scope.repos = [];
+
   if(parse('code')){
     Github.getTokenPromise(parse('code')).then(function(){
       Github.getUserPromise().then(function (user) {
-        debugger
-        console.log(user);
+        $scope.user = user.data;
+      });
+      Github.getUserRepos().then(function (repos) {
+       debugger
+        $scope.repos = repos;
       });
     });
   }

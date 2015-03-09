@@ -12,4 +12,8 @@ angular.module('config-builder')
     this.getUserPromise = function() {
       return $http.get('https://api.github.com/user?access_token=' + token);
     }
+
+    this.getUserRepos = function() {
+      return $http.get('https://api.github.com/user/repos?access_token=' + token)
+    }
   });
