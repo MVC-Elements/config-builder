@@ -2,8 +2,8 @@ var express = require('express');
 var request = require('request');
 var app = express();
 
-app.use(express.static(__dirname + '/src'));
-app.use(express.bodyParser());
+//app.use(express.static(__dirname + '/src'));
+app.use(express.static(__dirname + '/public'));
 
 //gitHub OAuth token request
 app.get('/api/github/gettoken/:code', function(req, res) {

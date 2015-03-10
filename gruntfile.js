@@ -21,6 +21,7 @@ module.exports = function(grunt) {
       dev: {
         files: [
           { src: 'bower_components/angular/angular.js', dest: sourcePath + 'libs/angular.js' },
+          { src: 'bower_components/angular-route/angular-route.js', dest: sourcePath + 'libs/angular-route.js' },
           { src: 'bower_components/restangular/dist/restangular.js', dest: sourcePath + 'libs/restangular.js' },
           { src: 'bower_components/foundation/css/foundation.css', dest: sourcePath + 'css/foundation.css' }
         ]
@@ -42,7 +43,8 @@ module.exports = function(grunt) {
         },
         files: {
           // Target-specific file lists and/or options go here.
-          'src/index.html': ['src/libs/*.js',
+          'src/index.html': ['src/libs/angular.js',
+                             'src/libs/*.js',
                              'src/app/**/*.js']
         }
       }
