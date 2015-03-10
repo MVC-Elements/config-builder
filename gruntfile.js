@@ -97,6 +97,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['start']);
   grunt.registerTask('start', ['express:dev', 'watch', 'express-keepalive']);
   grunt.registerTask('test', ['jshint']);
-  grunt.registerTask('install', ['copy:index_dev', 'copy:dev', 'clean:bower', 'html2js', 'sails-linker']);
+  grunt.registerTask('dev-install', ['copy:index_dev', 'copy:dev', 'clean:bower', 'html2js', 'sails-linker']);
   grunt.registerTask('build', ['clean:public', 'copy:prod', 'clean:bower', 'html2js', 'ngAnnotate:prod']);
+  grunt.registerTask('install', ['build']);
 };
