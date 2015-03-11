@@ -71,6 +71,11 @@ module.exports = function(grunt) {
       templates: {
         files: [ sourcePath + 'app/**/views/**/*.html'],
         tasks: ['html2js']
+      },
+      js: {
+        files: [ sourcePath + 'app/**/*.js',
+                 sourcePath + 'libs/*.js',],
+        tasks: ['sails-linker']
       }
     },
     ngAnnotate: {
@@ -97,7 +102,6 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['start']);
   grunt.registerTask('start', ['express:dev', 'watch', 'express-keepalive']);
   grunt.registerTask('test', ['jshint']);
-  grunt.registerTask('dev-install', ['copy:index_dev', 'copy:dev', 'clean:bower', 'html2js', 'sails-linker']);
+  grunt.registerTask('install', ['copy:index_dev', 'copy:dev', 'clean:bower', 'html2js', 'sails-linker']);
   grunt.registerTask('build', ['clean:public', 'copy:prod', 'clean:bower', 'html2js', 'ngAnnotate:prod']);
-  grunt.registerTask('install', ['build']);
 };
